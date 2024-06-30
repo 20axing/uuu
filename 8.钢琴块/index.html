@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playable PIANO</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script" defer></script>
+</head>
+<body>
+    <audio src="./tunes/;.wav"></audio>
+    <script>
+        const audioContext = new AudioContext()
+        const audioElement = document.querySelector("audio")
+        const source = audioContext.createMediaElementSource(audioElement)
+        source.connect(audioContext.destination)
+        document.documentElement.addEventListener("click",()=>{
+            audioElement.paly()
+        })
+    </script>
+</body>
+</html>
