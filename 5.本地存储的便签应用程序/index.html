@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地存储便签</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- <script src="script.js" defer></script> -->
+</head>
+<body>
+    <div class="container">
+        <ul class="notes-box">
+            <li class="add-note">
+                <div class="create-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <span>Add new note</span>
+            </li>
+            <li>
+                <h3>hello</h3>
+                <p>In this note app, users can easily add, edit, or delete their notes. The notes user has added to this app will be stored in the browser’s local storage so</p>
+                <div class="bottom-details">
+                    <span></span>
+                    <div class="ellipsis"></div>
+                </div>
+            </li>
+        </ul>
+
+        <form action="#">
+            <div class="form-head">
+                <i class="fa-solid fa-x"></i>
+                <h3>Add a new Note</h3>
+            </div>
+            <div class="text-field">
+                <label for="title">title</label>
+                <input type="text" id="title">
+            </div>
+            <div class="text-field">
+                <label for="description">description</label>
+                <textarea  id="description"></textarea>
+            </div>
+            <button type="submit">Add Note</button>
+        </form>
+        <div class="shade"></div>
+    </div>
+   
+</body>
+</html>

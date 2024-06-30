@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width: 320px;
+            padding: 15px;
+            border:solid 1px red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items: center; */
+            
+            
+        }
+        .container>div:nth-child(1){
+            flex: 1;
+        }
+        .container>div:nth-child(1) p{
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .container>div:last-child .progress{
+
+            margin-top: 5px;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>是一款用于构建用户界面的 JavaScript 框架。它基于标准 HTML、CSS 和 JavaScript 构建，并提供了一套声明式的、组件化的编程模型，帮助你高效地开发用户界面。无论是简单还是复杂的界面，Vue 都可以胜任。</p>
+        </div>
+        <div>
+            <div class="progress"></div>
+        </div>
+    </div>
+</body>
+</html>

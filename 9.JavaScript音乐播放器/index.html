@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js音乐播放器App</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script   src="script.js" type="module"></script>
+
+    
+</head>
+<body>
+    <!-- <div class="wrapper">
+        <header>
+            <i class="fa-solid fa-chevron-down"></i>
+            <h2>Now Playing</h2>
+            <i class="fa-solid fa-ellipsis"></i>
+        </header>
+        <div class="show-box">
+            <div class="img"></div>
+            <div class="message"></div>
+        </div>
+        <div class="controls-box">
+            <input type="range" min="0" id="">
+            <div class="time">
+                <span></span><span></span>
+            </div>
+            <div class="bottom">
+                <i class="fa-solid fa-repeat"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-solid fa-circle-play"></i>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="wrapper">
+        <div class="top-bar">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>Now Playing</span>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="img-area">
+            <img src="" alt="" srcset="">
+        </div>
+        <div class="song-details">
+            <p class="name"></p>
+            <p class="artist"></p>
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar">
+                <!-- <input type="range" name="" id=""> -->
+                <audio src="" id="main-audio"></audio>
+            </div>
+            <div class="song-timer">
+                <span class="current-time">0:00</span>
+                <span class="max-duration">0:00</span>
+            </div>
+        </div>
+        <div class="controls">
+            <i id="repeat-plist" class="fa-solid fa-repeat"></i>
+            <i id="prev" class="fa-solid fa-backward-step"></i>
+            <div class="play-pause">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            <i id="next" class="fa-solid fa-forward-step"></i>
+            <i id="more-music" class="fa-solid fa-sliders"></i>
+            
+        </div>
+        <div class="music-list">
+            <div class="header">
+                <div class="row">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Music list</span>
+                </div>
+                <i class="fa-solid fa-x" id="close"></i>
+            </div>
+            <ul>
+                <!-- 歌曲列表 -->
+            </ul>
+        </div>
+        
+    </div>
+    <!-- <script src="music-list.js" ></script> -->
+</body>
+</html>

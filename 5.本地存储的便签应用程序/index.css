@@ -1,0 +1,251 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(135, 171, 249);
+  padding: 30px;
+}
+
+::-moz-selection {
+  background-color: rgb(135, 171, 249);
+}
+
+::selection {
+  background-color: rgb(135, 171, 249);
+}
+
+.container {
+  padding: 20px;
+}
+.container .notes-box {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 25px;
+     -moz-column-gap: 25px;
+          column-gap: 25px;
+}
+.container .notes-box li {
+  width: 260px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+}
+.container .notes-box li.add-note,
+.container .notes-box li .create-btn i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 15px;
+}
+.container .notes-box li.add-note {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .notes-box li.add-note .create-btn {
+  width: 60px;
+  height: 60px;
+  border: dashed 3px rgb(135, 171, 249);
+  border-radius: 50%;
+}
+.container .notes-box li.add-note .create-btn i {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: rgb(135, 171, 249);
+  font-size: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.container .notes-box li.add-note .create-btn i:active {
+  font-size: 18px;
+}
+.container .notes-box li.add-note span {
+  color: rgb(135, 171, 249);
+  font-weight: 700;
+}
+.container .notes-box li h3 {
+  font-size: 22px;
+}
+.container .notes-box li p {
+  text-align: justify;
+  font-size: 14px;
+  color: #333;
+}
+.container .notes-box li .bottom-details {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: solid 1px #bbb;
+}
+.container .notes-box li .bottom-details .ellipsis {
+  width: 21px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.container .notes-box li .bottom-details .ellipsis::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #000;
+  -webkit-box-shadow: -8px 0 #000, -16px 0 #000;
+          box-shadow: -8px 0 #000, -16px 0 #000;
+  cursor: pointer;
+}
+
+form {
+  width: 100%;
+  max-width: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+form .form-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+form .form-head .fa-x {
+  position: absolute;
+  right: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+form .form-head .fa-x:active {
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+form .form-head h3 {
+  width: 100%;
+  padding: 15px;
+  border-bottom: solid 1px #aaa;
+}
+form .text-field {
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15px;
+  row-gap: 5px;
+}
+form .text-field label {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+form .text-field input, form .text-field textarea {
+  height: 40px;
+  padding: 0px 10px;
+  outline: none;
+  border: solid 1px #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+form .text-field textarea {
+  resize: none;
+  height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+form .text-field textarea::-webkit-scrollbar {
+  width: 4px;
+}
+form .text-field textarea::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+form .text-field textarea::-webkit-scrollbar-thumb {
+  height: 10px;
+  border-radius: 8px;
+  background-color: #999;
+}
+form button {
+  margin: 20px 15px 25px;
+  padding: 10px 0;
+  outline: none;
+  border: solid 1px rgb(135, 171, 249);
+  background-color: rgb(135, 171, 249);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background-color: #fff;
+  color: #000;
+  -webkit-box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -1px 0px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -1px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.shade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}

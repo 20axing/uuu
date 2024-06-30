@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随即调色生成器</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <ul class="palette-wrapper">
+        <li class="palette-item" data-value="red"></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+        <li class="palette-item" data-value=""></li>
+    </ul>
+    hello
+</body>
+<script>
+    window.navigator.clipboard.readText().then((data)=>{
+        console.log("复制成功")
+        console.log(data,"data")
+    },(err)=>{
+        console.log(err,"error")
+    })
+    const paletteItems = document.querySelectorAll(".palette-item")
+
+    const palette = ["0","1","2","3",4,5,9,6,7,8,"a","f","d","b","c","e"]
+    
+    function RandomColorGenerator(item){
+        let color = "#"
+            
+        for(let j = 0; j<6;j++){
+            const index = Math.floor(Math.random()*palette.length)
+            color += palette[index]
+        }
+        
+        item.style.backgroundColor = item.dataset.value = color;
+        
+    }
+
+    paletteItems.forEach(item=>{
+        RandomColorGenerator(item)
+        item.addEventListener("copy",(event)=>{
+            event.dataTransfer.setData("text/plain",item.dataset.value)
+        })
+        item.addEventListener("click",()=>{
+            item.copy()
+        })
+
+    })
+    
+</script>
+</html>

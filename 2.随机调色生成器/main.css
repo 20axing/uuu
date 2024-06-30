@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #E3F2FD;
+}
+
+.container {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.container .color {
+  margin: 12px;
+  padding: 7px;
+  list-style: none;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 10px 25px rgb(99, 110, 114);
+          box-shadow: 0 10px 25px rgb(99, 110, 114);
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.container .color:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+.container .color .rect-box {
+  width: 185px;
+  height: 188px;
+  border-radius: 4px;
+}
+.container .color:hover .rect-box {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+.container .color .hex-value {
+  display: block;
+  color: #444;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 12px 0 8px;
+  text-transform: uppercase;
+}
+
+.refresh-btn {
+  outline: none;
+  position: fixed;
+  left: 50%;
+  bottom: 40px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 10px 18px;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  background-color: #8a6cff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-box-shadow: 0 15px 30px rgba(99, 110, 114, 0.9);
+          box-shadow: 0 15px 30px rgba(99, 110, 114, 0.9);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.refresh-btn:hover {
+  background-color: #704dff;
+}
+
+@media (max-width: 500px) {
+  .container {
+    margin: 10px;
+  }
+  .container .color {
+    margin: 8px;
+    padding: 5px;
+    width: calc(50% - 20px);
+  }
+  .container .color .rect-box {
+    width: 100%;
+    height: 148px;
+  }
+  .container .color .hex-value {
+    font-size: 1.05rem;
+  }
+  .container .color .refresh-btn {
+    font-size: 1rem;
+  }
+}

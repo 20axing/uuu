@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(27, 160, 53);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main section {
+  position: relative;
+}
+main section div::before, main section div::after {
+  display: block;
+  padding: 0 5px;
+  height: 54px;
+  font-size: 108px;
+  line-height: 108px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+}
+main section div::before {
+  content: attr(data-after);
+}
+main section div::after {
+  content: attr(data-before);
+  line-height: 0;
+}
+main section div:nth-child(2) {
+  top: 0;
+  position: absolute;
+  height: 54px;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(50px);
+          transform: perspective(50px);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+main section div:nth-child(2)::before, main section div:nth-child(2)::after {
+  position: absolute;
+}
+main section div:nth-child(2)::after {
+  line-height: 108px;
+}
+main section div:nth-child(2)::before {
+  line-height: 0;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+main section div:nth-child(2).flip {
+  -webkit-animation-name: rotateX;
+          animation-name: rotateX;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+main .colon {
+  height: 108px;
+  line-height: 108px;
+  color: #000;
+  font-size: 54px;
+}
+
+@-webkit-keyframes rotateX {
+  to {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}
+
+@keyframes rotateX {
+  to {
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLElement DragEvent</title>
+    <style>
+        body{
+            /* 用户禁止选中元素 */
+            user-select: none;
+        }
+        #draggable{
+            text-align: center;
+            background-color: #fff;
+        }
+        .dropzone{
+            width: 200px;
+            height: 20px;
+            background: blueviolet;
+  margin: 10px;
+  padding: 10px;
+        }
+        .dropzone.dragover {
+  background-color: purple;
+}
+.dragging{
+    opacity: .5;
+}
+    </style>
+</head>
+<body>
+    <div class="dropzone">
+        
+        <div id="draggable" draggable="true">可拖动的div</div>
+        <div class="dropzone" id="droptarget"></div>
+    </div>
+</body>
+<script>
+    let dragged;
+
+    // 为可拖拽元素绑定拖拽事件
+    const source = document.querySelector("#draggable")
+    source.addEventListener("drag",event=>{
+        console.log("dragging")
+    })
+    source.addEventListener("dragstart", (event) => {
+  // 保存被拖动元素的引用
+  dragged = event.target;
+  // 设置为半透明
+  event.target.classList.add("dragging");
+});
+
+source.addEventListener("dragend", (event) => {
+  // 拖动结束，重置透明度
+  event.target.classList.remove("dragging");
+});
+</script>
+</html>

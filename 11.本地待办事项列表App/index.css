@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(70, 168, 255);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  width: 420px;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+.wrapper .input-field {
+  margin: 30px 30px 0;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.wrapper .input-field input {
+  border: solid 1px #777;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+}
+.wrapper .input-field input:valid ~ label {
+  opacity: 0;
+}
+.wrapper .input-field i, .wrapper .input-field label {
+  pointer-events: none;
+  position: absolute;
+  font-size: 14px;
+  color: #aaa;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.wrapper .input-field i {
+  -webkit-transform: translateX(6px);
+          transform: translateX(6px);
+}
+.wrapper .input-field label {
+  -webkit-transform: translateX(24px);
+          transform: translateX(24px);
+}
+.wrapper .controls {
+  padding: 15px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  border-bottom: solid 1px #aaa;
+}
+.wrapper .controls .clear-all-btn {
+  margin-left: auto;
+  padding: 5px 8px;
+  color: #fff;
+  border-radius: 3px;
+  border: solid 1px rgb(70, 168, 255);
+  background-color: rgb(70, 168, 255);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.wrapper .controls .clear-all-btn.active {
+  opacity: 0.9;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.wrapper .controls span {
+  list-style: none;
+  position: relative;
+  padding: 2px 3px;
+  cursor: pointer;
+}
+.wrapper .controls span.active {
+  color: rgb(70, 168, 255);
+  border-radius: 2px;
+  border-bottom: solid 2px rgb(70, 168, 255);
+}
+.wrapper .task-box {
+  margin-bottom: 30px;
+  padding: 0 30px;
+  list-style: none;
+  border-bottom: solid 1px #999;
+}
+.wrapper .task-box li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 50px;
+  height: 50px;
+  border-bottom: solid 1px #ccc;
+}
+.wrapper .task-box li label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+.wrapper .task-box li label input {
+  border: solid 1px #333;
+  outline: none;
+  background-color: red;
+  width: 14px;
+  height: 14px;
+}
+.wrapper .task-box li label p {
+  line-height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.wrapper .task-box li label p.completed {
+  text-decoration: line-through;
+}
+.wrapper .task-box li .settings {
+  position: relative;
+}
+.wrapper .task-box li .settings i {
+  cursor: pointer;
+}
+.wrapper .task-box li .settings .fa-ellipsis {
+  display: block;
+  line-height: 50px;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .task-box li .settings .task-menu {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+.wrapper .task-box li .settings .task-menu li.icon {
+  padding: 8px;
+  list-style: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 26px;
+  color: #333;
+  text-align: center;
+}
+.wrapper .task-box li .settings .task-menu li.icon span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.wrapper .task-box li .settings .task-menu li.icon i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+.wrapper .task-box li .settings .task-menu.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.wrapper .task-box li:last-child {
+  border: none;
+}
+
+.cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  pointer-events: none;
+}
+.cover.show {
+  pointer-events: auto;
+}

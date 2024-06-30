@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(80, 70, 185);
+}
+
+.file-uploader {
+  min-width: 420px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+}
+.file-uploader .uploader-header {
+  padding: 15px;
+  border-radius: 8px 8px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(238, 240, 252);
+}
+.file-uploader .uploader-header .uploader-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.file-uploader .uploader-header .file-completed-status {
+  font-size: 0.8rem;
+  color: #333;
+  font-weight: 500;
+}
+.file-uploader .file-list {
+  margin: 20px 0px;
+  padding: 0 15px;
+}
+.file-uploader .file-upload-box {
+  min-height: 90px;
+  margin: 20px 15px;
+  border: 1px dashed #333;
+  background-color: rgb(243, 246, 255);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.file-uploader .file-upload-box .box-title {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #333;
+}
+.file-uploader .file-upload-box .box-title .file-browse-button {
+  font-weight: 700;
+  cursor: pointer;
+}
+.file-uploader .file-upload-box .box-title .file-browse-button:active {
+  text-decoration: underline;
+}
+.file-uploader .file-upload-box.active {
+  border: solid 2px rgb(80, 70, 185);
+}
+.file-uploader .file-upload-box.active .box-title {
+  pointer-events: none;
+}

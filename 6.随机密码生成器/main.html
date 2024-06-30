@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机密码生成器</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>
+            Password Generator
+        </h2>
+        <div class="wrapper">
+            <div class="input-box">
+                <input type="text" disabled>
+                <i class="fa-solid fa-copy"></i>
+            </div>
+            <div class="pass-indicator"></div>
+            <div class="pass-length">
+                <div class="details">
+                    <label class="title">Password Length</label>
+                    <span></span>
+                </div>
+                <input type="range" min="1" max="30" value="15" step="1">
+            </div>
+            <div class="pass-settings">
+                <h3 class="title">password settings</h3>
+                <ul class="options">
+                    <li class="option"><label><input type="checkbox" id="lowercase" checked name="">Lowercase (a-z)</label></li>
+                    <li class="option"><label><input type="checkbox" id="uppercase" name="">Uppercase (A-Z)</label></li>
+                    <li class="option"><label><input type="checkbox" id="numbers" name="">Numbers (0-9)</label></li>
+                    <li class="option"><label><input type="checkbox" id="symbols" name="">Symbols (!-$^+)</label></li>
+                    <li class="option"><label><input type="checkbox" id="exc-duplicate" name="">Exclude Duplicate</label></li>
+                    <li class="option"><label><input type="checkbox" id="spaces" name="">Include Spaces</label></li>
+                </ul>
+            </div>
+            <button class="generate-btn">generate password</button>
+        </div>
+    </div>
+</body>
+</html>

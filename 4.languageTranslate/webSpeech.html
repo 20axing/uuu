@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webSpeech</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(245, 246, 250,1.0);
+        }
+        .container{
+            padding:50px 20px;
+            max-width: 420px;
+            border:solid 2px #fff;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 10px 15px rgba(0,0,0,.3);
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            row-gap:15px;
+
+            form{
+                padding:20px;
+                .txt{
+                    outline:none;
+                    border:dashed 1px #444;
+                    height: 35px;
+                    width: 100%;
+                }
+                .input-field{
+                    margin: 15px 0;
+                    display: flex;
+                    align-items: center;
+
+                    label,.rate-value,.pitch-value{
+                        margin: 0px 15px;
+                    }
+                    input{
+                        width: 100%;
+                    }
+                }
+                select{
+                    position:relative;
+                    outline: none;
+                
+                    padding: 2px 5px;
+                    font-size: .9rem;
+                    font-weight: 600;
+                    background-color: #fff;
+
+                }
+
+                /* select的下拉箭头 */
+                /* select::after{
+                    content:'\25BC';
+                    position:absolute;
+                    left:0;
+                    top:0;
+
+                } */
+                select option{
+                    color:red;
+
+                    background-color: #444;
+
+                }
+                select option:checked{
+
+                }
+
+                button{
+                    display: block;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Speech synthesiser</h1>
+    
+    <p>
+      Enter some text in the input below and press return to hear it. change voices
+      using the dropdown menu.
+    </p>
+
+    <form action="#">
+        <input type="text" class="txt">
+        <div class="input-field">
+            <label for="rate">Rate</label>
+            <input type="range" min="0.5" max="2" value="1" step="0.25" id="rate">
+            <div class="rate-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="input-field">
+            <label for="pitch">Pitch</label>
+            <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+            <div class="clearfix"></div>
+        </div>
+        <select></select>
+        <button type="submit">播放语音</button>
+    </form>
+    </div>
+    
+    <script>
+        //web Speech API入口
+        const synth = window.speechSynthesis;
+
+        const inputForm = document.querySelector("form")
+        const inputText = document.querySelector(".txt")
+        const voiceSelect = document.querySelector("select")
+
+        const pitch = document.querySelector("#pitch")
+        const pitchValue = document.querySelector(".pitch-value")
+        const rate = document.querySelector("#rate")
+        const rateValue = document.querySelector(".rate-value")
+
+        let voices = []
+
+        function populateVoiceList(){
+            voices = synth.getVoices()
+            console.log(voices)
+            for(let i = 0;i<voices.length;i++){
+                const option = new Option(voices[i].name)
+                option.dataset.name = voices[i].name
+                if(voices[i].default === true){
+                    option.text += "--default"
+                }
+                voiceSelect.appendChild(option)
+
+            }
+        }
+
+        populateVoiceList()
+
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = populateVoiceList;
+}
+
+        
+        //在设备麦克风上播放输入的文本
+        inputForm.addEventListener("submit",(e)=>{
+            // console.log(inputText.dataset.name)
+            //阻止链接跳转
+            e.preventDefault()
+            // 传递要合成语音的文本
+            const synthUtterance = new SpeechSynthesisUtterance(inputText.value)
+            for(let voice of voices){
+                const dataName = voiceSelect.options[voiceSelect.selectedIndex].dataset.name
+                if(dataName === voice.name){
+                    // 设置播放文本的语音对象
+                    synthUtterance.voice = voice;
+                    // synthUtterance.lang = "English";
+
+                    
+
+                }
+            }
+            synthUtterance.pitch = pitch.value;
+            synthUtterance.rate = rate.value;
+            // speakText(synthUtterance)
+            console.log(synthUtterance,"utterance")
+            synth.speak(synthUtterance)
+            synthUtterance.onpause = function (event) {
+  var char = event.utterance.text.charAt(event.charIndex);
+  console.log(
+    "Speech paused at character " +
+      event.charIndex +
+      ' of "' +
+      event.utterance.text +
+      '", which is "' +
+      char +
+      '".',
+  );
+};
+        })
+
+        function speakText(utterThis){
+            console.log(utterThis)
+            
+            console.log("use lang")
+           synth.speak(utterThis)
+        }
+        pitch.onchange = function(){
+            pitchValue.textContent = pitch.value
+        }
+    </script>
+</body>
+</html>

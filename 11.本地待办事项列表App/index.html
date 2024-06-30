@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地待办事项列表App</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- <script src="script.js" defer></script> -->
+    <!-- <script src="mscript.js" defer></script> -->
+    <script src="overscript.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="input-field">
+            <input type="text" class="task-input" required>
+            <i class="fa-solid fa-bars"></i>
+            <label for="">Add a new task</label>
+        </div>
+        <div class="controls">
+            <span class="active" id="all">
+                All
+                
+            </span>
+            <span id="pending">
+                Pending
+                
+            </span>
+            <span id="completed">
+                Completed
+                
+            </span>
+            <button class="clear-all-btn">Clear All</button>
+        </div>
+        <!-- <ul>
+            <li>a1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ul>
+            <li>p1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ul>
+            <li>c1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul> -->
+        <ul class="task-box"></ul>
+    </div>
+    <selection class="cover"></selection>
+
+</body>
+</html>

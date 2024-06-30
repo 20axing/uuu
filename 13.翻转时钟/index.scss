@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
+    background-color: rgb(27, 160, 53);
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+main{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    section{
+        position: relative;
+        
+
+
+        div{
+
+            &::before,&::after{
+                display: block;
+                padding: 0 5px;
+                height: 54px;
+                font-size: 108px;
+                line-height: 108px;
+                text-align: center;
+                background-color: #000;
+                color:#fff;
+                overflow: hidden;
+                border-radius: 5px;
+
+            }
+            &::before{
+             content: attr(data-after);
+             
+            }
+            &::after{
+             content: attr(data-before);
+             line-height: 0;
+            }
+            
+            &:nth-child(2){
+
+                top: 0;
+                position: absolute;
+                height: 54px;
+                transform-origin: bottom;
+                transform-style:preserve-3d;
+                transform:perspective(50px);
+                backface-visibility: hidden;
+
+
+                
+                &::before,&::after{
+                    position:absolute;
+                }
+                &::after{
+                    line-height: 108px;
+
+
+                }
+                &::before{
+                    line-height: 0;
+                    transform: rotateX(180deg);
+                }
+                &.flip{
+                    animation-name: rotateX;
+                animation-duration: .8s;
+                animation-timing-function: linear;
+                animation-fill-mode: both;
+                }
+            }
+            
+        }
+    }
+
+    .colon{
+        height: 108px;
+        line-height: 108px;
+        color:#000;
+        font-size: 54px;
+        
+    }
+}
+
+
+@keyframes rotateX {
+    to{
+        transform:rotateX(180deg);
+    }     
+}
+

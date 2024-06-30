@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天App</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="chat-box">
+            <header>
+                <h2>Chatbot</h2>
+                <i class="fa-solid fa-x"></i>
+            </header>
+            <ul class="chat-list"></ul>
+            <form action="#" class="bottom-field">
+                <div class="text-field">
+                    <textarea name="" id="" required ></textarea>
+                    <label for="">Write a message...</label>
+                </div>
+                
+                <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+            <section class="empty-over">
+                <div class="tip" onclick="event.stopPropagation()">
+                    <div class="tip-message">
+                        <h4>提示</h4>
+                        <p>不能发送空白消息</p>
+                    </div>
+                    <button onclick="closeOver()">确定</button>
+                </div>
+            </section>
+        </div>
+        <div class="chat-btn">
+            <i class="fa-solid fa-message"></i>
+        </div>
+    </div>
+</html>

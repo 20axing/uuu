@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(65, 133, 236);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  margin: 30px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-bottom: solid 1px #ccc;
+}
+.container .wrapper {
+  margin: 20px 20px 35px;
+}
+.container .wrapper .input-box {
+  position: relative;
+}
+.container .wrapper .input-box input {
+  width: 100%;
+  height: 43px;
+  outline: none;
+  border: solid 1px #aaa;
+  color: #000;
+  background: none;
+  letter-spacing: 1.4px;
+  font-weight: 500;
+  padding: 0 35px 0 15px;
+}
+.container .wrapper .input-box i {
+  position: absolute;
+  line-height: 43px;
+  right: 15px;
+  color: #707070;
+  cursor: pointer;
+}
+.container .wrapper .input-box i:hover {
+  color: #4285f4;
+}
+.container .wrapper .pass-indicator {
+  margin-top: 12px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #dfdfdf;
+}
+.container .wrapper .pass-indicator::after {
+  content: "";
+  display: block;
+  border-radius: inherit;
+  width: 0;
+  height: 100%;
+  -webkit-transform: all 0.3s ease;
+          transform: all 0.3s ease;
+}
+.container .wrapper .pass-indicator#weak::after {
+  width: 20%;
+  background-color: #e64a4a;
+}
+.container .wrapper .pass-indicator#medium::after {
+  width: 50%;
+  background-color: #f1c80b;
+}
+.container .wrapper .pass-indicator#strong::after {
+  width: 100%;
+  background-color: #4285f4;
+}
+.container .wrapper .pass-length {
+  margin: 15px 0;
+}
+.container .wrapper .pass-length .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .wrapper .pass-length input {
+  width: 100%;
+  height: 6px;
+}
+.container .wrapper .pass-settings {
+  margin-top: 20px;
+}
+.container .wrapper .pass-settings h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.container .wrapper .pass-settings .options {
+  list-style: none;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.container .wrapper .pass-settings .options .option {
+  margin-bottom: 10px;
+  width: 50%;
+}
+.container .wrapper .pass-settings .options .option label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #4f4f4f;
+  cursor: pointer;
+}
+.container .wrapper .pass-settings .options .option label input {
+  height: 16px;
+  width: 16px;
+  margin-right: 5px;
+}
+.container .wrapper .pass-settings .options .option:first-child {
+  pointer-events: none;
+}
+.container .wrapper .pass-settings .options .option:first-child input {
+  opacity: 0.7;
+}
+.container .wrapper .generate-btn {
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  padding: 18px 0;
+  width: 100%;
+  background: #4285f4;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 15px;
+    min-width: 360px;
+  }
+}
